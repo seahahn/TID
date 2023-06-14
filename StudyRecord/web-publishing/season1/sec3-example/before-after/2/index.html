@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav - before/after 2 (flex, before, after, hover, fontawesome, transition, position)</title>
+  </head>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .nav {
+      list-style: none;
+      width: 600px;
+      height: 120px;
+      padding: 0;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav li a {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+
+    .nav li a::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: crimson;
+      bottom: 0;
+      transition: 0.5s;
+
+      /* hover 시 아래 실선이 나타날 시작 위치를 지정해줌 */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav li a:hover::before {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <ul class="nav">
+      <li><a href="#none">HOME</a></li>
+      <li><a href="#none">ABOUT</a></li>
+      <li><a href="#none">SERVICE</a></li>
+      <li><a href="#none">PORTFOLIO</a></li>
+      <li><a href="#none">CONTACT</a></li>
+    </ul>
+  </body>
+</html>

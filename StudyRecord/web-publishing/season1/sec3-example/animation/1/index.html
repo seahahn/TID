@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Animation - keyframes, animation, nth-child, flex, transform, opacity</title>
+    <style>
+      .container {
+        border: 1px solid black;
+        width: 500px;
+        text-align: center;
+      }
+      .container div {
+        display: inline-block;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        animation: loading 0.4s linear infinite alternate;
+      }
+      .container div:nth-of-type(1) {
+        background: red;
+      }
+      .container div:nth-of-type(2) {
+        background: blue;
+        animation-delay: 0.2s;
+      }
+      .container div:nth-of-type(3) {
+        background: green;
+        animation-delay: 0.4s;
+      }
+
+      @keyframes loading {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(0.5);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Loading Animation</h1>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.skill-progress {
+  width: 600px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.item {
+}
+.item p {
+  overflow: hidden;
+}
+.item p span:nth-child(1) {
+  float: left;
+}
+.item p span:nth-child(2) {
+  float: right;
+}
+.progress {
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.progress-level {
+  height: 10px;
+  background: linear-gradient(to right, #f2709c, #ff9472);
+  animation: init 1s;
+  border-radius: inherit;
+}
+
+@keyframes init {
+  0% {
+    width: 0;
+  }
+}

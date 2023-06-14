@@ -1,0 +1,60 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: #222;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+.nav {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+}
+.nav a {
+  text-align: center;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+}
+.nav a::before,
+.nav a::after {
+  content: attr(data-link);
+  width: inherit;
+  position: absolute;
+  transition: 0.5s;
+  left: 0;
+}
+.nav a::before {
+  top: 0;
+  opacity: 1;
+}
+.nav a::after {
+  top: 100%;
+  opacity: 0;
+  color: green;
+}
+
+.nav a:hover::before {
+  top: -100%;
+  opacity: 0;
+}
+.nav a:hover::after {
+  top: 0;
+  opacity: 1;
+}

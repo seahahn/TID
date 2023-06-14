@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Animation - keyframes, animation, nth-child, flex, position, calc</title>
+    <style>
+      .container {
+        /** border: 1px solid black; */
+        width: 300px;
+        height: 300px;
+        position: relative;
+      }
+      .container div {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        display: inline-block;
+        background: red;
+        top: 0;
+        left: 0;
+        animation: loading 2s infinite;
+      }
+      .container div:nth-of-type(1) {
+      }
+      .container div:nth-of-type(2) {
+        animation-delay: 1s;
+      }
+
+      @keyframes loading {
+        0% {
+          top: 0;
+          left: 0;
+          background: red;
+        }
+        25% {
+          top: 0;
+          left: 100%;
+          transform: translateX(-100%);
+          background: blue;
+        }
+        50% {
+          top: 100%;
+          left: 100%;
+          transform: translate(-100%, -100%);
+          background: green;
+        }
+        75% {
+          top: 100%;
+          left: 0;
+          transform: translateY(-100%);
+          background: yellow;
+        }
+        100% {
+          top: 0;
+          left: 0;
+          background: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

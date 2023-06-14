@@ -1,0 +1,65 @@
+/* input, img 등의 태그에서 ::before, ::after(등의 가상요소) 사용할 수 없는 이유
+=> 대체 요소에는 가상요소를 사용할 수 없다.
+https://hasudoki.tistory.com/entry/input-image-%EB%93%B1%EC%97%90%EC%84%9C-before-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EC%9D%B4%EC%9C%A0
+ */
+
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.item {
+  width: 300px;
+  margin-bottom: 10px;
+  position: relative;
+  border-radius: 10px;
+}
+.item input {
+  height: 40px;
+  width: inherit;
+  border-radius: 10px;
+  border: none;
+  padding-left: 50px;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.3s;
+  border: 2px solid gray;
+}
+.item .fa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: gray;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 10px 0 0 10px;
+}
+
+.item input:focus {
+  border: 2px solid #3498db;
+  box-shadow: 0 0 5px #3498db;
+}
+.item input:focus::placeholder {
+  visibility: hidden;
+}
+
+/* 인접선택자 +
+HTML 요소 자신의 아래에 있는 것만 선택 가능
+위에 있는 것은 선택 불가
+=> 앞에서 지정한 요소의 바로 다음에 위치하는 형제 요소만 선택
+https://developer.mozilla.org/ko/docs/Web/CSS/Adjacent_sibling_combinator */
+.item input:focus + .fa {
+  background-color: #3498db;
+}
