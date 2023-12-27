@@ -1,2 +1,3 @@
 *.sql
 reference
+.DS_Store
